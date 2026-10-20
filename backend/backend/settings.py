@@ -48,12 +48,12 @@ INSTALLED_APPS = [
     # thired party apps
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
-    'corsheaders',
+    'corsheaders', # used for extrenal requests cuse django blocked exteranl requests by default!
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',#
+    'corsheaders.middleware.CorsMiddleware',######
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -335,7 +335,6 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
-
 
 # Set coresheader to allow all origin
 CORS_ALLOW_ALL_ORIGINS = True

@@ -7,10 +7,11 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     full_name = models.CharField(max_length=100)
     otp = models.CharField(max_length=100, null=True, blank=True)
+    refresh_token = models.CharField(max_length=100, null=True, blank=True)
 
     # This is only used when creating a user via commands like:
     # python manage.py createsuperuser
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'email' # now email use for login
     REQUIRED_FIELDS = ['username']
 
     def __str__(self):
